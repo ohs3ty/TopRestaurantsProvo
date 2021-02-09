@@ -47,7 +47,7 @@ namespace TopRestaurantsProvo.Controllers
                 return View("RestaurantList", TempStorage.SuggestionResponses);
             }
             return View("RestaurantSuggestions");
-        }
+            }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
