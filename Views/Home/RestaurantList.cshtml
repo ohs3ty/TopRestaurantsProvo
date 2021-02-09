@@ -2,4 +2,28 @@
     ViewData["Title"] = "Top Restaurants in Provo (according to users)";
 }
 
+@model IEnumerable<TopRestaurantsProvo.Models.Suggestion>
 
+<div>
+    <table>
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Restaurant Name</td>
+                <td>Favorite Dish</td>
+                <td>Restaurant Phone #</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(TopRestaurantsProvo.Models.Suggestion s in Model)
+            {
+                <tr>
+                    <td>@s.Name</td>
+                    <td>@s.RestaurantName</td>
+                    <td>@s.FavoriteDish</td>
+                    <td>@s.RestaurantPhone</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

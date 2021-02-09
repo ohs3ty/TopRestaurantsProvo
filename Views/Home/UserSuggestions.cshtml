@@ -1,6 +1,30 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "User Suggestions";
 }
+
+@model TopRestaurantsProvo.Models.Suggestion
 <h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<form asp-action="add" method="post">
+    <div>
+        <label asp-for="Name">Name</label>
+        <input asp-for="Name" />
+    </div>
+    
+    <div>
+        <label asp-for="RestaurantName">Restaurant Name</label>
+        <input asp-for="RestaurantName" />
+    </div>
+
+    <div>
+        <label asp-for="FavoriteDish">FavoriteDish</label>
+        <input asp-for="FavoriteDish" />
+    </div>
+
+    <div>
+        <label asp-for="RestaurantPhone">RestaurantPhone</label>
+        <input asp-for="RestaurantPhone" />
+    </div>
+
+</form>
+

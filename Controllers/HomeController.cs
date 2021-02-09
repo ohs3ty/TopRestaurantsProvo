@@ -29,12 +29,26 @@ namespace TopRestaurantsProvo.Controllers
         public IActionResult RestaurantList()
         {
 
-            return View();    
+            return View(TempStorage.SuggestionResponses);    
         }
 
+
+        [HttpGet("UserSuggestions")]
+        [ValidateAntiForgeryToken]
         public IActionResult UserSuggestions()
         {
             return View();
+        }
+
+        [HttpPost("UserSuggestions")]
+        public IActionResult UserSuggestions(Suggestion suggestion)
+        {
+            if (ModelState.IsValid)
+            {
+                TempStorage.AddApplication(suggestion);
+                return View("SuggestionList", TempStorage.SuggestionResponses);
+            }
+            return View("UserSuggestion");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
