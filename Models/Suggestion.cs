@@ -15,7 +15,10 @@ namespace TopRestaurantsProvo.Models
         public string RestaurantName { get; set; }
         public string? FavoriteDish { get; set; } = "It's ALL good";
 
+        [Required]
+        [Phone]
         [DataType(DataType.PhoneNumber)]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Invalid Phone number")]
         public string RestaurantPhone { get; set; }
     }
 }

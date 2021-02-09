@@ -32,23 +32,21 @@ namespace TopRestaurantsProvo.Controllers
             return View(TempStorage.SuggestionResponses);    
         }
 
-
-        [HttpGet("UserSuggestions")]
-        [ValidateAntiForgeryToken]
-        public IActionResult UserSuggestions()
+        [HttpGet("RestaurantSuggestions")]
+        public IActionResult RestaurantSuggestions()
         {
             return View();
         }
 
-        [HttpPost("UserSuggestions")]
-        public IActionResult UserSuggestions(Suggestion suggestion)
+        [HttpPost("RestaurantSuggestions")]
+        public IActionResult RestaurantSuggestions(Suggestion suggestion)
         {
             if (ModelState.IsValid)
             {
                 TempStorage.AddApplication(suggestion);
-                return View("SuggestionList", TempStorage.SuggestionResponses);
+                return View("RestaurantList", TempStorage.SuggestionResponses);
             }
-            return View("UserSuggestion");
+            return View("RestaurantSuggestions");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

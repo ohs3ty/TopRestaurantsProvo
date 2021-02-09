@@ -5,19 +5,19 @@
 @model IEnumerable<TopRestaurantsProvo.Models.Suggestion>
 
 <div>
-    <table>
+    <table class="table">
         <thead>
             <tr>
-                <td>Name</td>
-                <td>Restaurant Name</td>
-                <td>Favorite Dish</td>
-                <td>Restaurant Phone #</td>
+                <th scope="col">Name</th>
+                <th scope="col">Restaurant Name</th>
+                <th scope="col">Favorite Dish</th>
+                <th scope="col">Restaurant Phone #</th>
             </tr>
         </thead>
         <tbody>
             @foreach(TopRestaurantsProvo.Models.Suggestion s in Model)
             {
-                <tr>
+                <tr scope="row">
                     <td>@s.Name</td>
                     <td>@s.RestaurantName</td>
                     <td>@s.FavoriteDish</td>

@@ -24,7 +24,7 @@ namespace TopRestaurantsProvo.Models
         public string? RestaurantPhone { get; set; } = "No number listed";
         public string? WebsiteLink { get; set; } = "Coming soon";
 
-
+        //List of Restaurants (top 5)
         public static Restaurant[] GetRestaurants()
         { 
             Restaurant r1 = new Restaurant(1)

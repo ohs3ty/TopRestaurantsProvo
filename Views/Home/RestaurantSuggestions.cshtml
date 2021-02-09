@@ -1,0 +1,44 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "User Suggestions";
+}
+
+@model TopRestaurantsProvo.Models.Suggestion
+
+<div class="container">
+    <form asp-action="RestaurantSuggestions" method="post">
+            <span asp-validation-for="Name" class="text-danger"></span>
+        <div class="row">
+            <label class="col-2" asp-for="Name">Name</label>
+            <input asp-for="Name" />
+        </div>
+        <br />
+
+            <span asp-validation-for="RestaurantName" class="text-danger"></span>
+        <div class="row">
+            <label class="col-2" asp-for="RestaurantName">Restaurant Name</label>
+            <input asp-for="RestaurantName" />
+        </div>
+        <br />
+
+        <div class="row">
+            <label class="col-2" asp-for="FavoriteDish">Favorite Dish</label>
+            <input asp-for="FavoriteDish" />
+        </div>
+        <br />
+
+            <span asp-validation-for="RestaurantPhone" class="text-danger"></span>
+        <div class="row">
+            <label class="col-2" asp-for="RestaurantPhone">Restaurant Phone</label>
+            <input asp-for="RestaurantPhone" />
+        </div>
+        <br />
+
+        <div class="center row">
+            <button class="row btn btn-primary" type="submit">Add Suggestion</button>
+        </div>
+    </form>
+</div>
+
