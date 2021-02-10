@@ -18,7 +18,7 @@ namespace TopRestaurantsProvo.Models
         [Required]
         [Phone]
         [DataType(DataType.PhoneNumber)]
-        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Invalid Phone number")]
+        [RegularExpression(@"^(\+0?1\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$", ErrorMessage = "Invalid Phone number")]
         public string RestaurantPhone { get; set; }
     }
 }

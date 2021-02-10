@@ -6,39 +6,43 @@
 }
 
 @model TopRestaurantsProvo.Models.Suggestion
-
+<br /><br />
 <div class="container">
-    <form asp-action="RestaurantSuggestions" method="post">
+    <div style="margin-left: 25rem;">
+        <form asp-action="RestaurantSuggestions" method="post">
             <span asp-validation-for="Name" class="text-danger"></span>
-        <div class="row">
-            <label class="col-2" asp-for="Name">Name</label>
-            <input asp-for="Name" />
-        </div>
-        <br />
+            <div class="row">
+                <label class="col-2" asp-for="Name">Name</label>
+                <input asp-for="Name" />
+            </div>
+            <br />
 
             <span asp-validation-for="RestaurantName" class="text-danger"></span>
-        <div class="row">
-            <label class="col-2" asp-for="RestaurantName">Restaurant Name</label>
-            <input asp-for="RestaurantName" />
-        </div>
-        <br />
+            <div class="row">
+                <label class="col-2" asp-for="RestaurantName">Restaurant Name</label>
+                <input asp-for="RestaurantName" />
+            </div>
+            <br />
 
-        <div class="row">
-            <label class="col-2" asp-for="FavoriteDish">Favorite Dish</label>
-            <input asp-for="FavoriteDish" />
-        </div>
-        <br />
+            <div class="row">
+                <label class="col-2" asp-for="FavoriteDish">Favorite Dish</label>
+                <input asp-for="FavoriteDish" />
+            </div>
+            <br />
 
             <span asp-validation-for="RestaurantPhone" class="text-danger"></span>
-        <div class="row">
-            <label class="col-2" asp-for="RestaurantPhone">Restaurant Phone</label>
-            <input asp-for="RestaurantPhone" />
-        </div>
-        <br />
+            Format the phone number as such: ###-###-####
+            <br /><br />
+            <div class="row">
+                <label class="col-2" asp-for="RestaurantPhone">Restaurant Phone</label>
+                <input asp-for="RestaurantPhone" />
+            </div>
+            <br />
 
-        <div class="center row">
-            <button class="row btn btn-primary" type="submit">Add Suggestion</button>
-        </div>
-    </form>
+            <div class="row">
+                <button style="margin-left: 1rem;" class="row btn btn-primary" type="submit">Add Suggestion</button>
+            </div>
+        </form>
+    </div>
 </div>
 
