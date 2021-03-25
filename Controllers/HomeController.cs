@@ -26,6 +26,21 @@ namespace TopRestaurantsProvo.Controllers
             }
             return View(restaurantList);
         }
+
+        public IActionResult Test()
+        {
+            List<string> rList = new List<string>();
+
+            foreach (Restaurant r in Restaurant.GetRestaurants())
+            {
+                int rank = r.Rank;
+                string restaurantName = r.RestaurantName;
+                string? favoriteDish = r.FavoriteDish = "Missing Dish";
+
+                rList.Add(rank + " " + restaurantName);
+            }
+            return View(rList);
+        }
         public IActionResult RestaurantList()
         {
 
